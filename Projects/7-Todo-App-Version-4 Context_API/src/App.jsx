@@ -9,30 +9,25 @@ import { TodoItemsContext } from "./store/todo-items-store";
 function App() {
   const [todoItems, setTodoItems] = useState([]);
 
-  const handleNewItem = (itemName, itemDueDate) => {
+  const addNewItem = (itemName, itemDueDate) => {
     setTodoItems((currValue) => [
       ...currValue,
       { Task_name: itemName, Due_date: itemDueDate },
     ]);
   };
 
-  const handleDeleteItem = (todoItemName) => {
+  const deleteItem = (todoItemName) => {
     const newTodoItems = todoItems.filter((item) => item.name !== todoItemName);
     setTodoItems(newTodoItems);
   };
 
-  const defaultTodoItems = [{ Task_name: itemName, Due_date: itemDueDate }];
-
   return (
-    <TodoItemsContext.Provider value={[]}>
+    <TodoItemsContext.Provider value={todoItems}>
       <center className="todo-container">
         <AppName />
-        <AddTodo onNewItem={handleNewItem} />
-        {<WelcomeMessage todoItems={todoItems} />}
-        <TodoItems
-          todoItems={todoItems}
-          onDeleteClick={handleDeleteItem}
-        ></TodoItems>
+        <AddTodo onNewItem={addNewItem} />
+        {<WelcomeMessage />}
+        <TodoItems onDeleteClick={deleteItem}></TodoItems>
       </center>
     </TodoItemsContext.Provider>
   );
