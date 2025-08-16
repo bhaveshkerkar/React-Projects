@@ -4,7 +4,8 @@ import TodoItem from "./TodoItem";
 import styles from "./TodoItems.module.css";
 
 const TodoItems = ({ onDeleteClick }) => {
-  const todoItems = useContext(TodoItemsContext);
+  const contextObj = useContext(TodoItemsContext);
+  const todoItems = contextObj.todoItems;
 
   return (
     <div className={styles.itemsContainer}>
