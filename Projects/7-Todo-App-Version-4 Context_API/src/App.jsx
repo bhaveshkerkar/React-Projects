@@ -24,9 +24,9 @@ function App() {
   return (
     <TodoItemsContext.Provider
       value={{
-        todoItems: todoItems,
-        addNewItem: addNewItem,
-        deleteItem: deleteItem,
+        todoItems,
+        addNewItem,
+        deleteItem,
       }}
     >
       <center className="todo-container">
