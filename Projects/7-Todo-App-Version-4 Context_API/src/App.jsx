@@ -12,7 +12,7 @@ function App() {
   const addNewItem = (itemName, itemDueDate) => {
     setTodoItems((currValue) => [
       ...currValue,
-      { Task_name: itemName, Due_date: itemDueDate },
+      { name: itemName, dueDate: itemDueDate },
     ]);
   };
 
@@ -29,12 +29,12 @@ function App() {
         deleteItem,
       }}
     >
-      <center className="todo-container">
+      <div className="todo-container" style={{ textAlign: "center" }}>
         <AppName />
         <AddTodo />
         <WelcomeMessage />
         <TodoItems></TodoItems>
-      </center>
+      </div>
     </TodoItemsContext.Provider>
   );
 }
