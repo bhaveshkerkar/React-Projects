@@ -1,7 +1,7 @@
 const Sidebar = () => {
   return (
     <div
-      class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+      class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark sidebar"
       style={{ width: "280px" }}
     >
       {" "}
@@ -45,52 +45,7 @@ const Sidebar = () => {
             >
               <use xlinkHref="#speedometer2"></use>
             </svg>
-            Dashboard
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a href="#" class="nav-link text-white">
-            {" "}
-            <svg
-              class="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#table"></use>
-            </svg>
-            Orders
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a href="#" class="nav-link text-white">
-            {" "}
-            <svg
-              class="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#grid"></use>
-            </svg>
-            Products
-          </a>{" "}
-        </li>{" "}
-        <li>
-          {" "}
-          <a href="#" class="nav-link text-white">
-            {" "}
-            <svg
-              class="bi pe-none me-2"
-              width="16"
-              height="16"
-              aria-hidden="true"
-            >
-              <use xlinkHref="#people-circle"></use>
-            </svg>
-            Customers
+            Create Post
           </a>{" "}
         </li>{" "}
       </ul>{" "}
@@ -105,13 +60,13 @@ const Sidebar = () => {
         >
           {" "}
           <img
-            src="https://github.com/mdo.png"
+            src="https://github.com/bhaveshkerkar.png"
             alt=""
             width="32"
             height="32"
             class="rounded-circle me-2"
           />{" "}
-          <strong>mdo</strong>{" "}
+          <strong>Bhavesh Kerkar</strong>{" "}
         </a>{" "}
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
           {" "}
