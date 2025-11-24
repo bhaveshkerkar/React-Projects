@@ -7,7 +7,13 @@ export const PostList = createContext({
 });
 
 const postListReducer = (currPostList, action) => {
-  return currPostList; // Placeholder
+  let newPostList = currPostList;
+  if (action.type === "DELETE") {
+    newPostList = currPostList.filter(
+      (post) => post.id !== action.payload.postId
+    );
+  }
+  return newPostList; // Placeholder
 };
 
 const PostListProvider = ({ children }) => {
@@ -18,7 +24,9 @@ const PostListProvider = ({ children }) => {
 
   const addPost = () => {};
 
-  const deletePost = () => {};
+  const deletePost = (postId) => {
+    dispatchPostList({ type: "DELETE", payload: postId });
+  };
 
   return (
     <PostList.Provider
@@ -36,19 +44,19 @@ const PostListProvider = ({ children }) => {
 const DEFAULT_POST_LIST = [
   {
     id: "1",
-    title: "First Post",
-    content: "This is the content of the first post.",
+    title: "stranger things",
+    content: "Starnger things is a popular TV show.",
     userID: "user1",
-    tags: ["welcome", "first", "introduction"],
+    tags: ["Kids", "superHero", "super girl"],
     reactions: { like: 10, love: 5, laugh: 2 },
   },
 
   {
     id: "2",
-    title: "Second Post",
-    content: "This is the content of the second post.",
+    title: "Iron Man",
+    content: "Iron Man is a popular superhero movie.",
     userID: "user2",
-    tags: ["update", "news", "second"],
+    tags: ["iron man", "super hero", "power"],
     reactions: { like: 7, love: 3, laugh: 1 },
   },
 ];
