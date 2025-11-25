@@ -25,7 +25,12 @@ const PostListProvider = ({ children }) => {
   const addPost = () => {};
 
   const deletePost = (postId) => {
-    dispatchPostList({ type: "DELETE", payload: postId });
+    dispatchPostList({
+      type: "DELETE",
+      payload: {
+        postId,
+      },
+    });
   };
 
   return (
