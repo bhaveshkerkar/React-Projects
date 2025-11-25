@@ -23,3 +23,12 @@
   font-size: 1.2rem;
   margin: 15px 0 0 0;
 }
+
+.create-post {
+  margin: 30px 50px;
+  width: 80%;
+  position: relative;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
