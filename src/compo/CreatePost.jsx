@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { use, useRef } from "react";
 import { useContext } from "react";
 import { PostList } from "../store/post-list-store";
 
@@ -13,6 +13,13 @@ const CreatePost = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const userId = userIdElement.current.value;
+    const postTitle = postTitleElement.current.value;
+    const postBody = postBodyElement.current.value;
+    const postReactions = postReactionsElement.current.value;
+    const postTags = postTagsElement.current.value.split(/(\s+)/);
+
+    addPost(userId, postTitle, postBody, postReactions, postTags);
   };
 
   return (
@@ -39,7 +46,7 @@ const CreatePost = () => {
           ref={postTitleElement}
           className="form-control"
           id="title"
-          placeholder="How are you feeling today!"
+          placeholder="Enter post title here !"
         />
       </div>
 
@@ -53,7 +60,7 @@ const CreatePost = () => {
           rows="4"
           className="form-control"
           id="body"
-          placeholder="What's on your mind?"
+          placeholder="Write your post content here !"
         />
       </div>
 
@@ -66,7 +73,7 @@ const CreatePost = () => {
           ref={postReactionsElement}
           className="form-control"
           id="reactions"
-          placeholder="How many reactions do you expect?"
+          placeholder="Enter reactions in JSON format e.g., { like: 0, love: 0, laugh: 0 }"
         />
       </div>
 
