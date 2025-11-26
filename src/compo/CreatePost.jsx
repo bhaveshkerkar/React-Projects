@@ -5,11 +5,11 @@ import { PostList } from "../store/post-list-store";
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
 
-  const userId = useRef();
-  const postTitle = useRef();
-  const postBody = useRef();
-  const postReactions = useRef();
-  const postTags = useRef();
+  const userIdElement = useRef();
+  const postTitleElement = useRef();
+  const postBodyElement = useRef();
+  const postReactionsElement = useRef();
+  const postTagsElement = useRef();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,7 +23,7 @@ const CreatePost = () => {
         </label>
         <input
           type="text"
-          ref={userId}
+          ref={userIdElement}
           className="form-control"
           id="userId"
           placeholder="Your user id"
@@ -36,7 +36,7 @@ const CreatePost = () => {
         </label>
         <input
           type="text"
-          ref={postTitle}
+          ref={postTitleElement}
           className="form-control"
           id="title"
           placeholder="How are you feeling today!"
@@ -49,7 +49,7 @@ const CreatePost = () => {
         </label>
         <textarea
           type="text"
-          ref={postBody}
+          ref={postBodyElement}
           rows="4"
           className="form-control"
           id="body"
@@ -63,7 +63,7 @@ const CreatePost = () => {
         </label>
         <textarea
           type="text"
-          ref={postReactions}
+          ref={postReactionsElement}
           className="form-control"
           id="reactions"
           placeholder="How many reactions do you expect?"
@@ -76,7 +76,7 @@ const CreatePost = () => {
         </label>
         <textarea
           type="text"
-          ref={postTags}
+          ref={postTagsElement}
           className="form-control"
           id="tags"
           placeholder="Enter tags separated by commas"
