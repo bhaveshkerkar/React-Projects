@@ -17,7 +17,7 @@ const Sidebar = ({ selectedTab, setSelectedTab }) => {
         >
           <use xlinkHref="#bootstrap"></use>
         </svg>
-        <span className="fs-4">Sidebar</span>
+        <span className="fs-4">sidebar</span>
       </a>
       <hr />
       <ul className="nav nav-pills flex-column mb-auto">
