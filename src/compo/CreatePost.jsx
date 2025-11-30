@@ -66,7 +66,7 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="reactions" className="form-label">
-          Enter Number of Reactions
+          Enter Number of Reactions!
         </label>
         <textarea
           type="text"
@@ -79,7 +79,7 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="tags" className="form-label">
-          Enter Your hashtags here!
+          Enter hashtags here !!
         </label>
         <textarea
           type="text"
