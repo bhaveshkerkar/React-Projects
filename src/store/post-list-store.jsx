@@ -19,10 +19,7 @@ const postListReducer = (currPostList, action) => {
 };
 
 const PostListProvider = ({ children }) => {
-  const [postList, dispatchPostList] = useReducer(
-    postListReducer,
-    DEFAULT_POST_LIST
-  );
+  const [postList, dispatchPostList] = useReducer(postListReducer, []);
 
   const addPost = (userId, postTitle, postBody, postReactions, postTags) => {
     dispatchPostList({
@@ -58,25 +55,5 @@ const PostListProvider = ({ children }) => {
     </PostList.Provider>
   );
 };
-
-const DEFAULT_POST_LIST = [
-  {
-    id: "1",
-    title: "stranger things",
-    content: "Starnger things is a popular TV show.",
-    userID: "user1",
-    tags: ["Kids", "superHero", "super girl"],
-    reactions: { like: 10, love: 5, laugh: 2 },
-  },
-
-  {
-    id: "2",
-    title: "Iron Man",
-    content: "Iron Man is a popular superhero movie.",
-    userID: "user2",
-    tags: ["iron man", "super hero", "power"],
-    reactions: { like: 7, love: 3, laugh: 1 },
-  },
-];
 
 export default PostListProvider;
