@@ -67,7 +67,7 @@ const Header = () => {
               Login
             </button>{" "}
             <button type="button" className="btn btn-warning">
-              Sign-up
+              Sign up
             </button>{" "}
           </div>{" "}
         </div>{" "}
