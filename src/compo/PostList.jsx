@@ -1,10 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Post from "./Post";
 import { PostList as PostListData } from "../store/post-list-store";
 import WelcomeMessage from "./WelcomeMessage";
 
 const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
+  const { fetching, setFetching } = useState(false);
   useEffect(() => {
     // Logic to fetch posts from the server
     fetch("https://dummyjson.com/posts")
