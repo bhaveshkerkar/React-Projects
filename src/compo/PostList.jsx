@@ -5,22 +5,24 @@ import WelcomeMessage from "./WelcomeMessage";
 
 const PostList = () => {
   const { postList, addInitialPosts } = useContext(PostListData);
-  const { fetching, setFetching } = useState(false);
+  const [fetching, setFetching] = useState(false);
   useEffect(() => {
+    setFetching(true);
     // Logic to fetch posts from the server
     fetch("https://dummyjson.com/posts")
       .then((res) => res.json())
       .then((data) => {
         addInitialPosts(data.posts);
+        setFetching(false);
       });
   }, []);
 
   return (
     <>
-      {postList.length === 0 && <WelcomeMessage />}
-      {postList.map((post, index) => (
-        <Post key={index} post={post} />
-      ))}
+      {fetching && <LoadingSpiner />}
+      {!fetching && postList.length === 0 && <WelcomeMessage />}
+      {!fetching &&
+        postList.map((post, index) => <Post key={index} post={post} />)}
     </>
   );
 };
